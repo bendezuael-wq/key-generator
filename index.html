@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Key Generator</title>
+<style>
+body {
+    background:#0e1b3d;
+    color:white;
+    font-family:Arial;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+.box {
+    background:#162a5c;
+    padding:20px;
+    border-radius:15px;
+    width:300px;
+    text-align:center;
+}
+button {
+    background:#1e6bff;
+    border:none;
+    color:white;
+    padding:10px;
+    border-radius:10px;
+    cursor:pointer;
+    width:100%;
+    margin-top:10px;
+}
+.key {
+    background:#0c1633;
+    padding:10px;
+    border-radius:8px;
+    margin-top:10px;
+    word-break:break-all;
+}
+</style>
+</head>
+
+<body>
+<div class="box">
+    <h2>🔑 Generador de Key</h2>
+
+    <button onclick="generateKey(3)">Key 3 horas</button>
+    <button onclick="generateKey(5)">Key 5 horas</button>
+
+    <div class="key" id="key">---</div>
+</div>
+
+<script>
+function generateKey(hours) {
+    const prefix = "ELI";
+    const random = Math.floor(Math.random() * 90000) + 10000;
+    const exp = Math.floor(Date.now() / 1000) + (hours * 60 * 60);
+    document.getElementById("key").innerText =
+        prefix + "-" + random + "-" + exp;
+}
+</script>
+</body>
+</html>
