@@ -49,15 +49,16 @@ button {
 
     <div class="key" id="key">---</div>
 </div>
-
-<script>
+<script>    
 function generateKey(hours) {
-    const prefix = "ELI";
-    const random = Math.floor(Math.random() * 90000) + 10000;
-    const exp = Math.floor(Date.now() / 1000) + (hours * 60 * 60);
+    const prefix = "ELI"; // puedes cambiar el nombre si quieres
+    const random = Math.floor(Math.random() * 90000) + 10000; // número random
+    const exp = Math.floor(Date.now() / 1000) + (hours * 60 * 60); // tiempo en segundos
+
     document.getElementById("key").innerText =
         prefix + "-" + random + "-" + exp;
 }
 </script>
+
 </body>
 </html>
